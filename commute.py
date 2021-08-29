@@ -1,6 +1,7 @@
 import discord
 import sqlite3
 import time
+import os
 
 '''
 achannel , token 값 수정해야됩니다
@@ -159,5 +160,6 @@ async def on_message(message):
         except Exception as e:
                 embed = discord.Embed(title='❌  오류', description=f'오류가 발생하였습니다\n`{str(e)}`', color=0xFF0000)
                 await message.channel.send(embed=embed)
-
-client.run('ODgxMDEwNTYwNTg0NTQ4NDQz.YSmnBg.tscYF_RMIHGxldenymV1e_6NyFk')
+                
+access_token = os.environ["BOT_TOKEN"]
+client.run(access_token)
